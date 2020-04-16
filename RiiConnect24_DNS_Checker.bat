@@ -15,6 +15,8 @@ set version=1.0.0
 set last_build=2020/04/16
 set at=23:23
 
+title RiiConnect24 DNS Checker v%version% Created by @KcrPL
+
 :script_start
 :: ### Auto Update ###	
 :: 1=Enable 0=Disable
