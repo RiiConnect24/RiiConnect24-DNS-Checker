@@ -7,13 +7,13 @@ echo	The program is starting...
 
 :: ===========================================================================
 :: RiiConnect24 DNS Checker
-set version=1.0.0
+set version=1.0.1
 :: AUTHORS: KcrPL
 :: ***************************************************************************
 :: Copyright (c) 2020 KcrPL, RiiConnect24 and it's (Lead) Developers
 :: ===========================================================================
-set last_build=2020/04/16
-set at=23:23
+set last_build=2020/04/17
+set at=3:08AM
 
 title RiiConnect24 DNS Checker v%version% Created by @KcrPL
 
@@ -480,8 +480,8 @@ echo More info:
 call "dig\dig.exe" @%current_rc24_server% weather.wapp.wii.com
 echo -----------------------------------------------------------------------------------------------------------------------------
 echo.
-rmdir dig_temp /s /q
-rmdir %TempStorage% /s /q
+if exist dig rmdir dig /s /q
+if exist %TempStorage% rmdir %TempStorage% /s /q
 
 echo Press any key to exit. All temporary files has been flushed.
 pause>NUL
