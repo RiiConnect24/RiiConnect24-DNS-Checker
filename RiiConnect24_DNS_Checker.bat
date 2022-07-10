@@ -7,13 +7,13 @@ echo	The program is starting...
 
 :: ===========================================================================
 :: RiiConnect24 DNS Checker
-set version=1.0.1
+set version=1.0.2
 :: AUTHORS: KcrPL
 :: ***************************************************************************
-:: Copyright (c) 2020 KcrPL, RiiConnect24 and it's (Lead) Developers
+:: Copyright (c) 2020-2022 KcrPL, RiiConnect24 and it's (Lead) Developers
 :: ===========================================================================
-set last_build=2020/04/17
-set at=3:08AM
+set last_build=2022/07/10
+set at=6:00PM CEST
 
 title RiiConnect24 DNS Checker v%version% Created by @KcrPL
 
@@ -26,12 +26,12 @@ title RiiConnect24 DNS Checker v%version% Created by @KcrPL
 :: MainFolder/TempStorage - folder that is used to keep version.txt and whatsnew.txt. These two files are deleted every startup but if offlinestorage will be set 1, they won't be deleted.
 set /a Update_Activate=1
 set /a offlinestorage=0 
-set FilesHostedOn=https://kcrpl.github.io/Patchers_Auto_Update/RiiConnect24_DNS_Checker
+set FilesHostedOn=https://patcher.rc24.xyz/update/RiiConnect24_DNS_Checker/v1
 
 set mode=128,39
 mode %mode%
 
-set current_rc24_server=164.132.44.106
+set current_rc24_server=167.86.108.126
 
 set MainFolder=%appdata%\RiiConnect24_DNS_Checker
 set TempStorage=%appdata%\RiiConnect24_DNS_Checker\internet\temp
@@ -442,7 +442,7 @@ echo                                     :syhdyyyyso+/-`
 set /a temperrorlev=0
 
 call "dig\dig.exe" +noall +answer @%current_rc24_server% weather.wapp.wii.com >"%MainFolder%\DNS_Test.txt"
-call findstr /c:"164.132.44.106" "%MainFolder%\DNS_Test.txt"
+call findstr /c:"167.86.108.126" "%MainFolder%\DNS_Test.txt"
 set /a temperrorlev=%errorlevel%
 
 set /a main_dns=0
